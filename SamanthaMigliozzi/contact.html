@@ -64,6 +64,32 @@
       </section>
       <footer>&copy;2016 Samantha Migliozzi. All Rights Reserved</footer>
       <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script type="text/javascript">
+        @Override
+          public boolean shouldOverrideUrlLoading(WebView view, String url) {
+              if( url.startsWith("http:") || url.startsWith("https:") ) {
+                  return false;
+              }
+
+              // Otherwise allow the OS to handle it
+              else if (url.startsWith("tel:")) {
+                  Intent tel = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
+                  startActivity(tel);
+                  return true;
+              }
+              else if (url.startsWith("mailto:")) {
+                  String body = "Enter your Question, Enquiry or Feedback below:\n\n";
+                  Intent mail = new Intent(Intent.ACTION_SEND);
+                  mail.setType("application/octet-stream");
+                  mail.putExtra(Intent.EXTRA_EMAIL, new String[]{"email address"});
+                  mail.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                  mail.putExtra(Intent.EXTRA_TEXT, body);
+                  startActivity(mail);
+                  return true;
+                  }
+              return true;
+          }
+      </script>
 
 
    </body>
