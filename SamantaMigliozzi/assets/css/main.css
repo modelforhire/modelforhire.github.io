@@ -414,6 +414,10 @@ footer {
   margin-top: 7px;
 }
 
+.contact-me input:focus {
+  border: 1px solid DeepSkyBlue;
+}
+
 #contact button {
   width: auto;
   display: inline-block;
