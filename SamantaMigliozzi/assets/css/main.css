@@ -412,6 +412,7 @@ footer {
 .contact-me input, .contact-me textarea {
   width: 100%;
   margin-top: 7px;
+  transition: none;
 }
 
 .contact-me input:focus {
