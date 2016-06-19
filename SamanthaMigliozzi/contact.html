@@ -43,17 +43,23 @@
                   <p>
                      I have been modeling for 5 years and have experience with many different styles, but I am passionate about and specialize in fitness & yoga modeling. I love creating art & collaborating with new people, and I am very easy to work with!
                   </p>
-                  <form method="GET" action="mailto:tjwizard1@yahoo.com" enctype="text/plain">
+                  <form method="GET" action="mailto:test@example.com" enctype="text/plain">
                       <div>Subject</div>
-                      <input type="text" name="subject" placeholder="I Would Like to Hire You"/>
-                      <br>
-                      <br>
+                      <input type="text" name="subject" />
+
+                      <div>Name</div>
+                      <input name="Name" />
+
+                      <div>E-Mail</div>
+                      <input name="E-Mail Address" />
+
                       <div>Message</div>
-                      <textarea name="body"></textarea>
-                      <br>
-                      <button type="sumbit">Submit</button>
-                      <br>
-                      <span>When you click submit, a dialog should open asking what email application you want to use. Choose an application.  </span>
+                      <textarea name="Message"></textarea>
+
+                      <br/>
+                      <button type="submit">Submit</button>
+
+                      <input type="hidden" name="body" />
                   </form>
 
 
@@ -64,32 +70,35 @@
       </section>
       <footer>&copy;2016 Samantha Migliozzi. All Rights Reserved</footer>
       <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-      <script type="text/javascript">
-        @Override
-          public boolean shouldOverrideUrlLoading(WebView view, String url) {
-              if( url.startsWith("http:") || url.startsWith("https:") ) {
-                  return false;
-              }
+      <script>
+   var form = document.getElementsByTagName('form')[0];
+   form.addEventListener('submit',contact,false);
+   function contact(e) {
+      // Prevent Default Form Submission
+      e.preventDefault();
 
-              // Otherwise allow the OS to handle it
-              else if (url.startsWith("tel:")) {
-                  Intent tel = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
-                  startActivity(tel);
-                  return true;
-              }
-              else if (url.startsWith("mailto:")) {
-                  String body = "Enter your Question, Enquiry or Feedback below:\n\n";
-                  Intent mail = new Intent(Intent.ACTION_SEND);
-                  mail.setType("application/octet-stream");
-                  mail.putExtra(Intent.EXTRA_EMAIL, new String[]{"email address"});
-                  mail.putExtra(Intent.EXTRA_SUBJECT, "Subject");
-                  mail.putExtra(Intent.EXTRA_TEXT, body);
-                  startActivity(mail);
-                  return true;
-                  }
-              return true;
-          }
-      </script>
+      var target = e.target || e.srcElement;
+      var i = 0;
+      var message = '';
+
+      // Loop Through All Input Fields
+      for(i = 0; i < target.length; ++i) {
+         // Check to make sure it's a value. Don't need to include Buttons
+         if(target[i].type != 'text' && target[i].type != 'textarea') {
+                // Skip to next input since this one doesn't match our rules
+            continue;
+         }
+
+         // Add Input Name and value followed by a line break
+         message += target[i].name + ': ' + target[i].value + "\r\n";
+      }
+      // Modify the hidden body input field that is required for the mailto: scheme
+      target.elements["body"].value = message;
+
+      // Submit the form since we previously stopped it. May cause recursive loop in some browsers? Should research this.
+      this.submit();
+   }
+</script>
 
 
    </body>
