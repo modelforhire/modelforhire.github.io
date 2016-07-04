@@ -1,0 +1,153 @@
+//Page Wrap
+.page-wrap
+  transform: translateX(0px)
+  position: relative
+  overflow-x: hidden
+  +transition()
+  &.page-wrap-active
+    transform: translateX(220px)
+    .page-title, .main-content
+      opacity: .25
+
+//Home
+#home
+  +desktop
+    //position: fixed
+  nav
+    position: absolute
+    z-index: 99
+    width: 100%
+
+    //.page-title
+      display: none
+
+  .main-content
+    display: flex
+    flex-direction: column
+    +desktop
+      flex-direction: row
+
+    .hero-content
+      width: 100%
+      order: 1
+      overflow: hidden
+      +desktop
+        width: 50%
+        order: 0
+        //height: 100vh
+
+      img
+        width: 100%
+        +desktop
+          max-height: 100vh
+          //height: auto
+          width: auto
+    .main-info
+      order: 0
+      margin-top: 50px
+      position: relative
+      overflow-x: hidden
+
+      +laptop
+        margin-top: 140px
+      +desktop
+        order: 1
+        width: 50%
+        display: flex
+        //align-items: center
+        margin-top: 0
+
+        .name-card
+          padding-left: 50px
+          align-items: flex-start
+        h1
+          text-align: left
+
+        .subtitle
+          text-align: left
+          margin: 12px 0
+          font-size: 18px
+          background: black
+          padding: 10px 20px
+          display: inline
+          color: #e0bd56
+          position: relative
+          top: -15px
+          letter-spacing: 3px
+
+        article
+          display: flex
+          flex-direction: column
+
+        ul
+          justify-content: flex-start
+
+    footer
+      order: 2
+      +desktop
+        margin-left: 50px
+        +position(absolute, null null 0px 0)
+        +desktop
+          text-align: left
+    .footer-nav
+      +desktop
+        justify-content: flex-start
+
+
+
+// old Code
+  .hero-image
+    width: 100%
+    +desktop
+      width: 50%
+      float: left
+      z-index: -1
+      height: 100vh
+    img
+      width: 100%
+      +desktop
+        width: 50%
+        height: auto
+        min-width: 100%
+        min-height: 100%
+
+  .home nav
+    z-index: 10
+    position: absolute
+
+  .home .main-content
+    width: 45%
+    float: left
+    left: 50%
+    top: 0%
+
+
+//.home footer
+  width: 50%
+  left: 50%
+  float: left
+
+//Contact Me
+.contact-me
+  text-align: center
+  padding: 0 20px
+  h2
+    margin: 20px 0 7px
+    text-transform: uppercase
+    font:
+      size: 21px
+      weight: 200
+      //+OpenSans
+    letter-spacing: 2px
+    text-align: center
+    line-height: 1.0
+    +tablet
+      font-size: 48px
+      letter-spacing: 4px
+      margin: 80px 0 7px
+    +laptop
+      font-size: 55px
+      letter-spacing: 7px
+p
+  margin: 15px 0
+  letter-spacing: 1px

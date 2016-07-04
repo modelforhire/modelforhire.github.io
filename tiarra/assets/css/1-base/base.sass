@@ -1,0 +1,67 @@
+$tablet-portrait: 768px
+$tablet-landscape: 1024px
+
+@mixin tablet
+    @media screen and (min-width: $tablet-portrait)
+      @content
+
+@mixin laptop
+    @media screen and (min-width: $tablet-landscape)
+      @content
+
+@mixin desktop
+    @media screen and (min-width: $tablet-landscape + 91)
+      @content
+
+@mixin OpenSans
+  family: 'Open Sans Condensed', sans-serif
+
+html, body
+  width: 100%
+  overflow-x: hidden
+
+body
+  font-family: 'Crimson Text', serif
+  margin: 0
+
+ul, figure
+  list-style: none
+  margin: 0
+  padding: 0
+
+h1, h2, h3, h4, h5, h6, p
+  margin: 0
+
+p
+  font:
+    +OpenSans
+    size: 16px
+  +tablet
+    font:
+      size: 24px
+  +laptop
+    font:
+      size: 28px
+
+a, a:visited
+  color: rgba(255, 255, 255, .87)
+  text-decoration: none
+  -webkit-font-smoothing: antialiased
+  +transition()
+  &:hover
+    color: rgba(255, 255, 255, 1)
+
+
+.clearfix
+  clear: both
+
+.fixed
+  position: fixed
+
+.mobile-hide
+  display: none
+  +desktop
+    display: block
+.desktop-hide
+  +desktop
+    display: none !important
