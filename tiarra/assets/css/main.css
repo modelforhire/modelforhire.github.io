@@ -690,29 +690,29 @@ ul.stats-controller label {
   width: 100%;
 }
 
-.grid {
+.model-gallery {
   max-width: 1115px;
   width: 100%;
   margin: 0 auto;
 }
 
-.grid .grid-item {
+.model-gallery .gallery-item {
   width: 100%;
-  margin-bottom: 23px;
+  margin-bottom: 25px;
 }
 
 @media screen and (min-width: 1115px) {
-  .grid .grid-item {
+  .model-gallery .gallery-item {
     max-width: 545px;
     float: left;
   }
 }
 
-.grid .grid-item img {
+.model-gallery .gallery-item img {
   width: 100%;
 }
 
-.grid .margin-right {
+.model-gallery .gallery-item:nth-child(odd) {
   margin-right: 25px;
 }
 
