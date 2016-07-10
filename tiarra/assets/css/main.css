@@ -393,7 +393,7 @@ nav .page-title {
           transform: rotate(-88deg);
   width: 25px;
   background: white;
-  top: 14px;
+  top: 12px;
 }
 
 @media screen and (min-width: 768px) {
