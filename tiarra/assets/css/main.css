@@ -766,12 +766,13 @@ ul.stats-controller label {
 
 .model-gallery .gallery-item {
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 2px;
 }
 
 @media screen and (min-width: 1115px) {
   .model-gallery .gallery-item {
     max-width: 545px;
+    margin-bottom: 25px;
     float: left;
   }
 }
@@ -780,8 +781,20 @@ ul.stats-controller label {
   width: 100%;
 }
 
-.model-gallery .gallery-item:nth-child(odd) {
-  margin-right: 25px;
+@media screen and (min-width: 1115px) {
+  .model-gallery .gallery-item:nth-child(odd) {
+    margin-right: 25px;
+  }
+}
+
+.model-gallery:last-child {
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 1115px) {
+  .model-gallery:last-child {
+    margin-bottom: 0;
+  }
 }
 
 footer .footer-nav {

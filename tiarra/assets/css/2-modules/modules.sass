@@ -313,14 +313,21 @@ ul.stats-controller
 
   .gallery-item
     width: 100%
-    margin-bottom: 25px
+    margin-bottom: 2px
     +desktop
       max-width: 545px
+      margin-bottom: 25px
       float: left
     img
       width: 100%
-  .gallery-item:nth-child(odd)
-    margin-right: 25px
+  +desktop
+    .gallery-item:nth-child(odd)
+      margin-right: 25px
+.model-gallery:last-child
+  margin-bottom: 25px
+  +desktop
+    margin-bottom: 0
+
 
 
 footer
