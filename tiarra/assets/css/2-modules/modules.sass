@@ -109,7 +109,7 @@ nav
   align-items: center
   margin: 10px 0 25px
   +tablet
-    margin: 40px 0 60px
+    margin: 40px 0 45px
 .name-card ul
   display: flex
   flex-wrap: wrap
@@ -271,6 +271,37 @@ ul.stats-controller
 .main-image img
   width: 100%
 
+//Slider Controls
+.hero-content
+  .slider-controls
+    +position(absolute, 43% 0 null 0)
+    z-index: 10
+    //margin: 0 2%
+    box-sizing: border-box
+    width: 100%
+    +tablet
+      top: 47%
+    +desktop
+      top: 50%
+    a
+      color: rgba(255, 255, 255, .80)
+      font-size: 24px
+      cursor: pointer
+      transition: .3s all ease-in-out
+      &:hover
+        color: rgba(255, 255, 255, 1)
+      +tablet
+        font-size: 48px
+    .prev, .next
+        position: absolute
+        z-index: 99
+        background: black
+        padding: 10px 20px
+    .prev
+      left: 0
+    .next
+      right: 0
+
 
 //Portfolio Page
 
@@ -315,3 +346,9 @@ footer
   p
     font-size: 12px
     text-align: center
+
++desktop
+  #home
+    footer
+      p
+        text-align: left

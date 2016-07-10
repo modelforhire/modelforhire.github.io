@@ -26,22 +26,38 @@
     flex-direction: column
     +desktop
       flex-direction: row
+      height: 100vh
+      overflow: hidden
 
     .hero-content
       width: 100%
       order: 1
+      position: relative
+      z-index: 1
       overflow: hidden
       +desktop
         width: 50%
         order: 0
-        //height: 100vh
+        //min-height: 100vh
 
       img
         width: 100%
-        +desktop
-          max-height: 100vh
-          //height: auto
-          width: auto
+        opacity: 0
+        height: 0
+        visibility: hidden
+        float: left
+        //min-height: 100vh
+        transition: all .5s cubic-bezier(0.4, 0, 1, 1)
+        &.reveal
+          float: none
+          opacity: 1
+          height: auto
+          visibility: visible
+          //+laptop
+          +desktop
+            //max-height: 100vh
+            min-height: 100vh
+            //width: auto
     .main-info
       order: 0
       margin-top: 50px
@@ -92,40 +108,6 @@
     .footer-nav
       +desktop
         justify-content: flex-start
-
-
-
-// old Code
-  .hero-image
-    width: 100%
-    +desktop
-      width: 50%
-      float: left
-      z-index: -1
-      height: 100vh
-    img
-      width: 100%
-      +desktop
-        width: 50%
-        height: auto
-        min-width: 100%
-        min-height: 100%
-
-  .home nav
-    z-index: 10
-    position: absolute
-
-  .home .main-content
-    width: 45%
-    float: left
-    left: 50%
-    top: 0%
-
-
-//.home footer
-  width: 50%
-  left: 50%
-  float: left
 
 //Contact Me
 .contact-me
