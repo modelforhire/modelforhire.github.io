@@ -388,9 +388,9 @@ nav .page-title {
   content: "";
   position: absolute;
   height: 2px;
-  -webkit-transform: rotate(-88deg);
-      -ms-transform: rotate(-88deg);
-          transform: rotate(-88deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
   width: 25px;
   background: white;
   top: 12px;
