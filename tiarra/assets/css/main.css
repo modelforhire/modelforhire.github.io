@@ -1,4 +1,6 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,700italic,700,600italic,600,400italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 progress, sub, sup {
   vertical-align: baseline;
 }
@@ -1054,6 +1056,76 @@ footer p {
 p {
   margin: 15px 0;
   letter-spacing: 1px;
+}
+
+#download {
+  background: #e7e7e7;
+}
+
+#download .main-content {
+  margin: 0 auto;
+}
+
+#download .subtitle {
+  display: block;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#download .media {
+  max-width: 640px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  #download .media {
+    margin-bottom: 50px;
+  }
+}
+
+#download .media .title {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  #download .media .title {
+    font-size: 24px;
+  }
+}
+
+#download .media .description {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+#download .media p {
+  text-align: center;
+}
+
+#download .media a {
+  margin-top: 10px;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+  text-transform: uppercase;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 5px 20px;
+}
+
+#download .media a:hover {
+  background-color: black;
+}
+
+#download video, #download img {
+  width: 80%;
+}
+
+@media screen and (min-width: 1024px) {
+  #download video, #download img {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
