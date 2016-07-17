@@ -15,7 +15,7 @@
           <h1 class="name">Tiarra Alexandria Digital&nbsp;Experience<div class="subtitle">Download Center</div></h1>
       </section><!-- End of namecard -->
       <section class="media">
-        <video poster="assets/images/video_thumbnail.png" autoplay="" loop>
+        <video id="video" poster="assets/images/video_thumbnail.png" autoplay="" loop>
           <source src="assets/video/desktop_tour_vid_900x470.mp4" type="video/mp4">
           <source src="assets/video/desktop_tour_vid_900x470.webm" type="video/webm">
         </video>
@@ -77,5 +77,11 @@
     </div> <!-- End of page wrap -->
       <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
       <script src="assets/js/functions.js"></script>
+      <script type="text/javascript">
+        $(function(){
+          var video = document.getElementById('video');
+          video.play();
+        })
+      </script>
   </body>
 </html>
