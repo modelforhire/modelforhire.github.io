@@ -1,7 +1,6 @@
 $(function (){
   navClick();
   sliderReveal();
-  videoPlay();
 });
 
 function navClick() {
