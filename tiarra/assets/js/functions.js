@@ -53,8 +53,3 @@ function sliderReveal() {
   })
 
 }
-
-function videoPlay() {
-  var video = document.getElementById('video');
-  video.play();
-}
