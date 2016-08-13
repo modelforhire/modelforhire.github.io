@@ -1,0 +1,190 @@
+body#home
+  +laptop
+    position: fixed
+
+#home
+  +laptop
+    .col-container
+      display: flex
+      height: 100vh
+      overflow-y: hidden
+
+#home
+  .col-1, .col-2
+    width: 100%
+
+  +laptop
+    .col-1
+      width: 30%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+    .col-2
+      width: 70%
+      display: flex
+      justify-content: space-between
+
+      .one
+        order: 1
+        width: 80%
+        align-self: flex-end
+        //margin-left: 25px
+
+
+      .two
+        order: 0
+        width: 40%
+        margin-right: 4%
+        //margin-left: 16%
+
+        .bx-wrapper:nth-child(2)
+          width: 90% !important
+          margin-left: 10%
+
++laptop
+  .bx-wrapper
+    margin: 0 0 15% 0
+    box-shadow: none
+    border: 0px
+    background: #fff
+
+  .bx-controls
+    +position(absolute, null 0 0)
+    background: rgba(0,0, 0, .45)
+    z-index: 10
+    height: 25px
+    //width: 100%
+
+  .bx-wrapper .bx-pager
+    padding-top: 0px
+    position: absolute
+    top: 55%
+    right: -3%
+    transform: translateY(-50%)
+  .one .bx-wrapper
+    margin-bottom: 0
+  .two .bx-wrapper
+    margin-bottom: 35px
+
+  .bx-wrapper .bx-pager.bx-default-pager a
+    background: none
+    border: white 1px solid
+
+  .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus
+    background: white
+
+#home
+  +desktop
+    .col-2
+      .one
+        width: 63%
+      .two
+        margin-left: 16%
+        ul:nth-child(2)
+
+
+footer
+  text-transform: uppercase
+  padding: 0 25px
+  .footer-nav
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    font-size: 14px
+    +desktop
+      font-size: 18px
+  font:
+    +OpenSans
+    size: 12px
+
+  //text-align: center
+  margin: 0 0 25px 0
+  +desktop
+    font-size: 16px
+.pod li
+  margin: 0
+
+
+#home
+  .name-card
+    padding-bottom: 15px
+  footer
+    //text-align: center
+    margin: 20px 0 10px
+    //padding: 0
+    +laptop
+      text-align: left
+      padding: 0
+      .footer-nav
+        justify-content: flex-start
+
+//Internal Pages
+.col-container
+  overflow-x: hidden
+  +laptop
+    display: flex
+    margin-bottom: -5%
+    .col-1
+      width: 35%
+      margin-right: 5%
+
+    .col-2
+      width: 60%
+
+
+
+
+
+//Model Gallery
+.model-gallery
+  margin: 0 auto 15px
+  +tablet
+    max-width: 90%
+
+  +laptop
+    .row
+      margin-bottom: 25px
+
+
+.fr-pages
+  canvas
+    opacity: 0 !important
+
+
+
+
+//Contact Info
+.contact-info
+  margin: 25px
+
+  h2
+    font-size: 24px
+    text-transform: uppercase
+    +desktop
+      font-size: 34px
+  p
+    font:
+      +OpenSans
+      size: 18px
+    +desktop
+      font-size: 20px
+
+
+.email-cta
+  background: black
+  padding: 10px 20px
+  color: white
+  text-align: center
+  cursor: pointer
+  font:
+    +OpenSans
+    size: 18px
+  +transition
+  &:hover
+    transform: scale(.97)
+
+  a
+    color: white
+    //text-transform: uppercase
+  +laptop
+    display: inline-block

@@ -1,0 +1,63 @@
+doctype html
+html(lang="en")
+  head
+    title Webby
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="name", content="Janey Hann")
+    link(href="assets/css/main.css", rel="stylesheet" media="screen")
+
+  body
+    include assets/includes/overlay
+    .opacity-morph
+    section.col-container  
+      section.col-1
+        nav.main-nav-toggle
+          span
+          .nav-title MENU
+          
+        article.name-card
+          h2 Commercial Model
+          h1 Janey <br>Hann
+          
+          include assets/includes/stats
+        
+  
+      section.col-2
+        article.slider-header
+          ul.bxslider
+            figure
+              a.fancybox(href="assets/images/internal-slider/Janey-Hann-Contact-01.jpg", rel="Internal Slider", title=" ")
+                img(src="assets/images/internal-slider/Janey-Hann-Contact-01.jpg")
+              figcaption Janey Hann
+            figure
+              a.fancybox(href="assets/images/internal-slider/Janey-Hann-Contact-02.jpg", rel="Internal Slider", title=" Photographor: Daria Roundtree")
+                img(src="assets/images/internal-slider/Janey-Hann-Contact-02.jpg")
+              figcaption Photographer Daria Roundtree with model, Janey Hann
+            figure
+              a.fancybox(href="assets/images/internal-slider/Janey-Hann-Contact-03.jpg", rel="Internal Slider", title=" Photographor: Daria Roundtree")
+                img(src="assets/images/internal-slider/Janey-Hann-Contact-03.jpg")
+              figcaption Photographer Joe Adea with model, Janey Hann
+
+        
+    .contact-info
+      .row
+        .columns.twelve
+          h2 Contact Me
+          p Los Angeles native, UMass Amherst alumni. Have worked for e-commerce companies, jewelry companies, studios, and others. Interested in paid shoots/gigs only. 
+          
+          p Let's work together and create some amazing work. Contact me for hourly/days rates.
+          
+          .email-cta
+            a(href="mailto:tjwizard1@yahoo.com?subject=Love%20Your%20Site") contactrebeccajane@gmail.com
+        .clearfix 
+          
+    include assets/includes/footer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+    script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+    script(src="assets/js/functions.js")
+    script(src="assets/js/bxslider.js")
+    script(src="assets/js/jquery.fancybox.pack.js")
+
+
+ 

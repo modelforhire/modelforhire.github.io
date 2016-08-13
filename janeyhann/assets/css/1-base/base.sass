@@ -1,0 +1,104 @@
+$tablet-portrait: 768px
+$tablet-landscape: 1024px
+
+
+@mixin tablet
+    @media screen and (min-width: $tablet-portrait)
+      @content
+
+@mixin laptop
+    @media screen and (min-width: $tablet-landscape)
+      @content
+
+@mixin desktop
+    @media screen and (min-width: $tablet-landscape + 256)
+      @content
+
+@mixin OpenSans
+  family: 'Open Sans Condensed', sans-serif
+
+html, body
+  width: 100%
+
+body
+  font-family: 'Crimson Text', serif
+  margin: 0
+  background: #f3f3f3
+  letter-spacing: 1px
+
+
+figure
+  padding: 0
+  margin: 0
+
+img
+  max-width: 100%
+  width: 100%
+
+h2
+  font:
+    +OpenSans
+    size: 18px
+  letter-spacing: 1px
+  margin: 0
+  +desktop
+      font:
+        size: 29px
+
+
+h1
+  text-transform: uppercase
+  letter-spacing: 1px
+  font:
+    size: 77px
+  line-height: 1
+  margin: -7px 0 7px
+
+  +desktop
+    font:
+      size: 120px
+
+
+ul
+  margin: 0
+  padding: 0
+li
+  list-style: none
+  margin: 0 7px 0 0
+
+a
+  color: rgba(0,0,0, .78)
+  text-decoration: none
+  transition: .1s all ease-in-out
+  &:hover
+    color: rgba(0,0,0,1)
+
+label
+  font-weight: 300
+
+.clearfix
+  clear: both
+.mobile-show
+  +laptop
+    display: none
+
+.desktop-show
+  display: none
+  +laptop
+    display: block
+
+.fixed
+  position: fixed
+
+.opacity-morph
+  opacity: 0
+  position: absolute
+  visibility: hidden
+  background: white
+  transition: .8s all
+  &.om-active
+    opacity: .7
+    z-index: 2
+    height: 100vh
+    width: 100%
+    visibility: visible

@@ -1,0 +1,244 @@
+//Nav Toggle
+.main-nav-toggle
+  background: black
+  +size(90px)
+  position: relative
+  +transition
+  z-index: 20
+
+  span, span:before, span:after
+    background: white
+    position: absolute
+
+  span
+    +size(2px 35px)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) rotate(90deg)
+    +transition
+
+  span:before, span:after
+    content: ""
+    +size(2px 40px)
+    transform: rotate(90deg)
+    +transition
+
+  span:before
+    top: 15px
+
+  span:after
+    top: -20px
+
+.main-nav-toggle.menu-click
+  span:before
+    opacity: 0
+  span
+    transform: rotate(45deg)
+    margin-top: -20px
+    +size(2px 40px)
+  span:after
+    transform: rotate(-90deg)
+    top: 1px
+    left: -1px
+
+//Nav Title
+.nav-title
+  color: white
+  font:
+    +OpenSans
+    size: 20px
+  +position(absolute, null 0 -30px)
+  text-align: center
+  //margin: 5px 0
+  height: 50px
+  background: black
+
+
+//Name Card
+.name-card
+  padding: 60px 0px 25px 25px
+
+.name-card ul
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: flex-start
+  margin: 0
+  +tablet
+    width: 100%
+  li
+    margin: 0 3px
+    font:
+      size: 12px
+      family: 'Open Sans Condensed', sans-serif
+    line-height: 1.8
+    text-transform: uppercase
+    +tablet
+      font-size: 14px
+      letter-spacing: 2px
+    +laptop
+      font-size: 16px
+
+
+#home
+  .name-card
+    //+desktop
+      transform: scale(1.4)
+      transform-origin: left bottom
+
+//Stats Controller
+input[type="radio"]
+  display: none
+  ~ ul.stats-controller label:before
+    content: "\f10c "
+    display: inline-block
+    margin-right: 3px
+    font-family: "FontAwesome"
+
+input#stats-toggler1
+  ~ ul.stats-controller label:before
+    content: "\f10c "
+    display: inline-block
+    margin-right: 3px
+    font-family: "FontAwesome"
+  &:checked
+    ~ ul.stats-controller #label1:before
+      content: "\f058"
+      display: inline-block
+      font-family: "FontAwesome"
+      +animation(selected 180ms ease-in)
+    ~ article ul.stats-us
+      opacity: 1
+      height: auto
+      visibility: visible
+      transform: translateY(0)
+
+input[type="radio"]#stats-toggler2
+  &:checked
+    ~ ul.stats-controller #label2:before
+      content: "\f058"
+      display: inline-block
+      font-family: "FontAwesome"
+      +animation(selected 180ms ease-in)
+    ~ article ul.stats-int
+      opacity: 1
+      height: auto
+      visibility: visible
+      transform: translateY(0)
+
+ul.stats-controller
+  margin: 7px auto 0
+  +laptop
+    margin: 10px auto 14px
+  //li
+    padding: 3px 7px
+    background: #dedede
+    margin: 0 10px
+    box-shadow: 3px 3px 3px #eee
+  label
+    margin: 0 7px 0 0
+    font:
+      size: 12px
+      family: 'Open Sans Condensed', sans-serif
+    letter-spacing: 1px
+    +tablet
+      font-size: 14px
+    +laptop
+      font-size: 16px
+
++keyframes(selected)
+  0%
+    +transform(scale(0))
+
+  90%
+    +transform(scale(1.15))
+
+  100%
+    +transform(scale(1))
+
+//Stats
+.stats
+  overflow: hidden
+.stats-us, .stats-int
+  opacity: 0
+  height: 0
+  visibility: hidden
+  transform: translateY(70px)
+  +transition()
+
+//Model Specs
+.model-specs
+  display: flex
+  flex-wrap: wrap
+  text-transform: uppercase
+  font:
+    +OpenSans
+    size: 12px
+  letter-spacing: 1px
+  margin-bottom: 25px
+  +desktop
+    font-size: 20px
+
+//Internal Slider
+figure
+  position: relative
+  overflow: hidden
+  &:hover
+    figcaption
+      transform: translateX(0px)
+figcaption
+  color: white
+  text-transform: uppercase
+  transform: translateX(-500%)
+  transition: .5s all cubic-bezier(1,-0.33, 0.06, 1.26)
+  font:
+    +OpenSans
+  padding: 10px 20px
+  +position(absolute, null null 0px)
+  background: rgba(0,0,0, .7)
+  +laptop
+    bottom: 25px
+
+
+.overlay
+  visibility: hidden
+  opacity: 0
+  transform: translate(-1000%, -800%)
+  background: rgba(0,0,0, .85)
+  height: 0
+  width: 50%
+  min-width: 320px
+  margin: 25px
+  position: fixed
+  z-index: 5
+  box-sizing: border-box
+  font:
+    +OpenSans
+    size: 25px
+  transition: .3s all cubic-bezier(1,-0.16, 0, 1.03)
+  transform-origin: top left
+  a
+    color: rgba(255, 255, 255, .8)
+  +laptop
+    font-size: 36px
+  +desktop
+    font-size: 50px
+  .nav-wrapper
+    +position(absolute, 50% null null 50%)
+    transform: translate(-50%, -50%)
+    @media screen and (min-width: 667px)
+      +position(absolute, 10% null null 30%)
+      transform: translate(0%, 0%)
+    +tablet
+      +position(absolute, 10% null null 20%)
+      transform: translate(0%, 0%)
+&.overlay-active
+  visibility: visible
+  opacity: 1
+  transform: translate(0, 0)
+  height: 100vh
+  +tablet
+    height: 95vh
+  +laptop
+    height: 92vh

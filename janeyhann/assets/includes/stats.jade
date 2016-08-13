@@ -1,0 +1,32 @@
+mixin specs(height, bust, waist, hips, dress, shoe, hair, eyes)
+  li Height:
+    = height 
+  li Bust:
+    = bust 
+  li Waist:
+    = waist 
+  li Hips:
+    = hips 
+  li Dress:
+    = dress 
+  li Shoe:
+    = shoe 
+  li Hair:
+    = hair 
+  li Eyes:
+    = eyes 
+    
+input#stats-toggler1(type="radio" name="name" value="" checked)
+input#stats-toggler2(type="radio" name="name" value="")
+
+article.stats
+  ul.model-specs.stats-us
+    +specs('5ft 7" ', '32" ', '24" ', '34" ', '2 ', '7.5 ', 'Brown ', 'Brown ')
+
+
+  ul.model-specs.stats-int
+    +specs('170cm ', '81cm ', '61cm ', '86cm ', '2 ', '7.5 US ', 'Brown ', 'Brown ')
+
+ul.stats-controller
+  label#label1(for="stats-toggler1") US Metrics
+  label#label2(for="stats-toggler2" ) International

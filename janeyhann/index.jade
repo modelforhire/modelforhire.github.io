@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+  head
+    title Webby
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="name", content="Janey Hann")
+    link(href="assets/css/main.css", rel="stylesheet" media="screen")
+
+  body#home
+    include assets/includes/overlay
+    .opacity-morph
+    section.col-container  
+      section.col-1
+        nav.main-nav-toggle
+          span
+          .nav-title MENU
+          
+        article.name-card
+          h2 Commercial Model
+          h1 Janey <br>Hann
+          article.stats
+            include assets/includes/stats
+        
+          .desktop-show
+            include assets/includes/footer  
+            
+      section.col-2
+        article.pod.one
+          ul.bxslider
+            figure
+              img(src="assets/images/Janey-Hann-slider1-01.jpg")
+              figcaption PhotographerJoseling Castro
+            figure
+              img(src="assets/images/Janey-Hann-slider1-02.jpg")
+              figcaption PhotographerJoseling Castro
+            figure
+              img(src="assets/images/Janey-Hann-slider1-03.jpg")
+              figcaption PhotographerJoseling Castro
+            figure
+              img(src="assets/images/Janey-Hann-slider1-04.jpg")
+              figcaption PhotographerDaria Roundtree
+            figure
+              img(src="assets/images/Janey-Hann-slider1-05.jpg")
+              figcaption PhotographerJoe Adea          
+        
+        article.pod.two
+          ul.bxslider
+            figure
+              img(src="assets/images/Janey-Hann-slider2-01.jpg")
+            figure
+              img(src="assets/images/Janey-Hann-slider2-02.jpg")
+              figcaption PhotographerCarlo Parducho
+            figure
+              img(src="assets/images/Janey-Hann-slider2-03.jpg")
+              figcaption PhotographerNeesh, Wicked LA
+          ul.bxslider.sliderthree
+            figure
+              img(src="assets/images/Janey-Hann-slider3-01.jpg")
+              figcaption Photographer Joe Adea
+            figure
+              img(src="assets/images/Janey-Hann-slider3-02.jpg")
+              figcaption Photographer Joe Adea
+            figure
+              img(src="assets/images/Janey-Hann-slider3-03.jpg")
+              figcaption Photographer Caleb DesCognets
+    .mobile-show
+      include assets/includes/footer
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+    script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+    script(src="assets/js/functions.js")
+    script(src="assets/js/bxslider.js")
+    script(src="assets/js/jquery.fancybox.pack.js")
+
+
+ 

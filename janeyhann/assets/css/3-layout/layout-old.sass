@@ -1,0 +1,104 @@
++laptop
+  .col-container
+    display: flex
+    height: 100vh
+  body
+    position: fixed
+
+
+
+.col-1, .col-2
+  width: 100%
+.pod.three-desktop
+  display: none
++laptop
+  .col-1
+    width: 30%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  .col-2
+    width: 70%
+    display: flex
+    justify-content: space-between
+
+    .one
+      order: 1
+      width: 80%
+      align-self: flex-end
+      margin-bottom: 30px
+
+
+    .two
+      order: 0
+      width: 40%
+      margin-right: 4%
+      //margin-left: 16%
+
+      ul:nth-child(2)
+        width: 65%
+        margin-left: 35%
+
++laptop
+  .bx-wrapper
+    margin: 0 0 15% 0
+    box-shadow: none
+    border: 0px
+    //background: #fff
+
+  //.bx-controls
+    +position(absolute, null 0 0)
+    background: rgba(0,0, 0, .45)
+    z-index: 10
+    height: 25px
+    //width: 100%
+
+  .bx-wrapper .bx-pager
+    padding-top: 0px
+    position: absolute
+    //top: 55%
+    right: -3%
+    transform: translateY(-40%)
+  .one .bx-wrapper
+    margin-bottom: 0
+  .two .bx-wrapper
+    margin-bottom: 35px
+
+  //.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus
+    background: white
+
++desktop
+  .col-2
+
+    .one
+      width: 63%
+    .two
+      margin-left: 16%
+
+      ul:nth-child(2)
+
+
+footer
+  text-transform: uppercase
+  .footer-nav
+    display: flex
+    align-items: center
+    justify-content: center
+  font:
+    +OpenSans
+    size: 12px
+  text-align: center
+  margin: 0 0 25px 0
+
+.pod li
+  margin: 0
+
+
+#home
+  .name-card
+    padding-bottom: 0
+  footer
+    text-align: left
+    margin: 20px 0 10px
+    .footer-nav
+      justify-content: flex-start
