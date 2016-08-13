@@ -1349,7 +1349,7 @@ label {
   position: absolute;
   visibility: hidden;
   background: white;
-  transition: .8s all;
+  transition: .1s all;
 }
 
 .opacity-morph.om-active {
@@ -1677,7 +1677,7 @@ figcaption {
   box-sizing: border-box;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 25px;
-  transition: 0.3s all cubic-bezier(1, -0.16, 0, 1.03);
+  transition: 0.1s all cubic-bezier(1, -0.16, 0, 1.03);
   -webkit-transform-origin: top left;
       -ms-transform-origin: top left;
           transform-origin: top left;
